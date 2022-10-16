@@ -1,0 +1,5 @@
+Comandos já usados no inicio:
+
+yarn init -y
+yarn add express
+yarn add nodemon sucrase -D
