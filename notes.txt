@@ -1,5 +1,11 @@
 Comandos já usados no inicio:
-
 yarn init -y
 yarn add express
 yarn add nodemon sucrase -D
+
+Para padrão de código:
+yarn add eslint -D
+yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+Depois de configurar tudo, para corrigir o código já existente:
+yarn eslint --fix src --ext .js
