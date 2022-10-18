@@ -9,3 +9,13 @@ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
 
 Depois de configurar tudo, para corrigir o código já existente:
 yarn eslint --fix src --ext .js
+
+----------------------------------------------------
+
+Instalado PostgreSQL 11
+Instalado Postbird 0.8.4
+
+Criando banco de dados:
+Object > Create > Database
+
+Nome do banco: tasklist
