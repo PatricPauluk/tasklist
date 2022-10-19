@@ -19,3 +19,26 @@ Criando banco de dados:
 Object > Create > Database
 
 Nome do banco: tasklist
+
+----------------------------------------------------
+
+Instalado o Sequelize (ARM) para facilitar trabalhar com banco de dados relacionais
+yarn add sequelize
+
+Interface de linha de comando para trabalhar com sequelize
+yarn add sequelize-cli -D
+
+As configurações do sequelize estão em ".sequelizerc".
+
+----------------------------------------------------
+
+Exemplificando um pouco a estrutura
+
+A pasta src > app tem os models e os controllers
+O arquivo src > config > database.js configura o app com o banco de dados
+A pasta src > database > migrations serve para automatizar/controlar melhor o banco de dados ao invés de alterar no model
+
+----------------------------------------------------
+
+Instaladas bibliotecas do PostgreSQL
+yarn add pg pg-hstore
