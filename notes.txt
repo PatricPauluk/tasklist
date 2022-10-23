@@ -42,3 +42,29 @@ A pasta src > database > migrations serve para automatizar/controlar melhor o ba
 
 Instaladas bibliotecas do PostgreSQL
 yarn add pg pg-hstore
+
+----------------------------------------------------
+
+Comando exemplo com sequelize (também utilizado neste projeto) para criar migrations automáticamente:
+yarn sequelize migration:create --name=create-users
+
+Após criadas, precisamos inserir o código para trabalhar com o banco.
+Quando a migration for executada, ela ira realizar todo o procedimento conforme a função chamada.
+
+Para executar a última migration criada:
+yarn sequelize db:migrate
+
+Após executar, as tabelas e colunas serão criadas no banco, pode conferir no próprio PostgreSQL ou no Postbird.
+
+----------------------------------------------------
+
+Caso seja necessário desfazer a criação das tabelas e colunas criadas, para por exemplo, acrescentar outro
+campo, é utilizado o comando:
+yarn sequelize db:migrate:undo
+
+Ele desfaz a última migration executada.
+
+Para desfazer TODAS as migrations executadas:
+yarn sequelize db:migrate:undo:all
+
+----------------------------------------------------
