@@ -28,6 +28,7 @@ yarn add sequelize
 Interface de linha de comando para trabalhar com sequelize
 yarn add sequelize-cli -D
 
+A conexão com o sequelize esta em database > index.js.
 As configurações do sequelize estão em ".sequelizerc".
 
 ----------------------------------------------------

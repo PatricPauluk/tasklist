@@ -4,16 +4,18 @@ import Sequelize, { Model } from "sequelize";
 Os métodos são diferentes, porém semelhantes quando trabalhado com Mongoose.
 */
 
-class User extends Model{
-  static init(sequelize){
+class User extends Model {
+  static init(sequelize) {
     // O super chama o método init desta mesma classe.
     super.init(
-      { // Campos informados pelo usuário
+      {
+        // Campos informados pelo usuário
         name: Sequelize.STRING,
         email: Sequelize.STRING,
         password_hash: Sequelize.STRING,
       },
-      { // Passa por parâmetro o sequelize recebido em Init
+      {
+        // Passa por parâmetro o sequelize recebido em Init
         sequelize,
       }
     );
