@@ -35,6 +35,12 @@ class User extends Model {
     // Retorna o init.
     return this;
   }
+
+  // Verifica a autenticidade da senha para sessão. Chamado em SessionController.js.
+  checkPassword(password) {
+    // Retorna true ou false.
+    return bcrypt.compare(password, this.password_hash);
+  }
 }
 
 export default User;

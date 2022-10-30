@@ -72,3 +72,17 @@ yarn sequelize db:migrate:undo:all
 
 Instalado bcrypt.js para criar hash de senha:
 yarn add bcrypt js
+
+----------------------------------------------------
+
+Instalada a biblioteca JWT:
+yarn add jsonwebtoken
+
+JWT (JSON Web Token) utilizado para autenticar usuários em APIs REST.
+Por exemplo, ao realizar um login em uma aplicação, o JWT devolve um token criptografado dividido em 3 partes:
+
+• Header do token (Qual tipo);
+• Payload (Pode conter dados);
+• Assinatura (Garante autenticidade).
+
+O token é armazenado pra ser utilizado em futuras autenticações, realizar o login novamente, etc.
