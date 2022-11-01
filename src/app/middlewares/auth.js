@@ -32,6 +32,8 @@ export default async (req, res, next) => {
 
     // Cria uma variável dentro de req que recebe o id do usuário logado
     req.userId = decoded.id;
+
+    // Código continua na rota
     return next();
   } catch (err) {
     return res.status(401).json({ error: "Token inválido." });
