@@ -1,6 +1,7 @@
 import User from "../models/User";
 
 class UserController {
+  // Cadastro de usuários
   async store(req, res) {
     // Realiza a verificação, se já existe um usuário com o email enviado.
     const userExists = await User.findOne({
@@ -21,6 +22,13 @@ class UserController {
       name,
       email,
     });
+  }
+
+  // Atualizar dados de usuário
+  async update(req, res) {
+    // O token do usuário é inserido em Bearer Auth no Insomnia, para realizar a atualização
+    console.log(req.userId);
+    return res.json({ ok: true });
   }
 }
 
