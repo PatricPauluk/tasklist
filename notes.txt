@@ -113,3 +113,7 @@ O token é armazenado pra ser utilizado em futuras autenticações, realizar o l
 
 Instalado yup para trabalhar com validações no node:
 yarn add yup
+
+----------------------------------------------------
+
+Teste de commit 03/11/2022
