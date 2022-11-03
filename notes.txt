@@ -1,3 +1,25 @@
+Usuários do banco:
+
+{
+	"name": "Almir",
+	"email": "almir@almir.com",
+	"password": "654321"
+}
+
+{
+	"name": "Bruna",
+	"email": "brubes@brubes.com",
+	"password": "654321"
+}
+
+{
+	"name": "Patric Pauluk",
+	"email": "patric@pauluk.com",
+	"password": "123456"
+}
+
+----------------------------------------------------
+
 Comandos já usados no inicio:
 yarn init -y
 yarn add express
@@ -86,3 +108,8 @@ Por exemplo, ao realizar um login em uma aplicação, o JWT devolve um token cri
 • Assinatura (Garante autenticidade).
 
 O token é armazenado pra ser utilizado em futuras autenticações, realizar o login novamente, etc.
+
+----------------------------------------------------
+
+Instalado yup para trabalhar com validações no node:
+yarn add yup

@@ -1,8 +1,21 @@
+import * as Yup from "yup";
 import User from "../models/User";
 
 class UserController {
   // Cadastro de usuários
   async store(req, res) {
+    // Validação dos campos enviados com Yup
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string().email().required(),
+      password: Yup.string().required().min(6),
+    });
+
+    // Se o schema (validação) não for válido...
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: "Falha na autenticação." });
+    }
+
     // Realiza a verificação, se já existe um usuário com o email enviado.
     const userExists = await User.findOne({
       where: { email: req.body.email },
@@ -39,9 +52,34 @@ class UserController {
       "name": "",
       "email": "",
       "oldPassword": "",
-      "password": ""
+      "password": "",
+      "confirmPassword": ""
     }
     */
+
+    // Validação dos campos com o Yup
+    const schema = Yup.object().shape({
+      name: Yup.string(),
+      email: Yup.string().email(),
+      oldPassword: Yup.string().min(6),
+      /* when() Verifica se o oldPassword foi fornecido. Se foi, a troca de senha é obrigatória.
+      field referencia o campo em si (password neste caso).
+      */
+      password: Yup.string()
+        .min(6)
+        .when("oldPassword", (oldPassword, field) =>
+          oldPassword ? field.required : field
+        ),
+      // Verifica se password foi informado e se é igual a confirmPassword
+      confirmPassword: Yup.string().when("password", (password, field) =>
+        password ? field.required().oneOf([Yup.ref("password")]) : field
+      ),
+    });
+
+    // Se o schema (validação) não for válido...
+    if (!(await schema.isValid(req.body))) {
+      return res.status(400).json({ error: "Falha na autenticação." });
+    }
 
     // Captura email e password antigo no Insomnia
     const { email, oldPassword } = req.body;
@@ -63,7 +101,7 @@ class UserController {
     }
 
     // Se a senha antiga foi informada E é diferente da atual...
-    if (oldPassword && !(await user.checkPassword(oldPassword))){
+    if (oldPassword && !(await user.checkPassword(oldPassword))) {
       return res.status(401).json({ error: "Senha incorreta." });
     }
 
@@ -76,8 +114,6 @@ class UserController {
       name,
       email,
     });
-
-    return res.json({ ok: true });
   }
 }
 
