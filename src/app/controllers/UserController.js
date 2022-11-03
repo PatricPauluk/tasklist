@@ -60,7 +60,7 @@ class UserController {
     // Validação dos campos com o Yup
     const schema = Yup.object().shape({
       name: Yup.string(),
-      email: Yup.string().email(),
+      email: Yup.string().email(), // email obrigatoriamente deve ser fornecido (?)
       oldPassword: Yup.string().min(6),
       /* when() Verifica se o oldPassword foi fornecido. Se foi, a troca de senha é obrigatória.
       field referencia o campo em si (password neste caso).
@@ -68,7 +68,7 @@ class UserController {
       password: Yup.string()
         .min(6)
         .when("oldPassword", (oldPassword, field) =>
-          oldPassword ? field.required : field
+          oldPassword ? field.required() : field
         ),
       // Verifica se password foi informado e se é igual a confirmPassword
       confirmPassword: Yup.string().when("password", (password, field) =>

@@ -1,9 +1,9 @@
 Usuários do banco:
 
 {
-	"name": "Almir",
-	"email": "almir@almir.com",
-	"password": "654321"
+	"name": "Almiru-chan",
+	"email": "mir@aomir.com",
+	"password": "123456"
 }
 
 {
