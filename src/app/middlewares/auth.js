@@ -1,4 +1,4 @@
-// Middleware para verificar a integridade da autenticação, passado nas rotas
+// Middleware para verificar a integridade da autenticação, passado nas rotas e continuar o acesso do usuário logado
 
 import jwt from "jsonwebtoken";
 import { promisify } from "util";
@@ -8,7 +8,7 @@ export default async (req, res, next) => {
   // Captura o token no header/bearer do Insomnia
   const authHeader = req.headers.authorization;
 
-  // Verifica se o token foi informado
+  // Verifica se o token informado (usuario logado)
   if (!authHeader) {
     return res.status(401).json({ error: "Token não existe" });
   }
