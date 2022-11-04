@@ -68,8 +68,11 @@ yarn add pg pg-hstore
 
 ----------------------------------------------------
 
-Comando exemplo com sequelize (também utilizado neste projeto) para criar migrations automáticamente:
+Comando com sequelize (também utilizado neste projeto) para criar migrations automáticamente:
+Usuários:
 yarn sequelize migration:create --name=create-users
+Tasks:
+yarn sequelize migration:create --name=create-tasks
 
 Após criadas, precisamos inserir o código para trabalhar com o banco.
 Quando a migration for executada, ela ira realizar todo o procedimento conforme a função chamada.
@@ -113,7 +116,3 @@ O token é armazenado pra ser utilizado em futuras autenticações, realizar o l
 
 Instalado yup para trabalhar com validações no node:
 yarn add yup
-
-----------------------------------------------------
-
-Teste de commit 03/11/2022
