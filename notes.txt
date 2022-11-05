@@ -1,7 +1,15 @@
 Usuários do banco:
 
 {
-	"name": "Almiru-chan",
+	"name": "Almir",
+	"email": "almir@almir.com",
+	"oldPassword": "654321",
+	"password": "123456",
+	"confirmPassword": "123456"
+}
+
+{
+	"name": "Almir",
 	"email": "mir@aomir.com",
 	"password": "123456"
 }
@@ -116,3 +124,10 @@ O token é armazenado pra ser utilizado em futuras autenticações, realizar o l
 
 Instalado yup para trabalhar com validações no node:
 yarn add yup
+
+----------------------------------------------------
+
+Instalado CORS para qualquer dominio, etc. ter acesso a aplicação:
+yarn add cors
+
+É chamado em app.js
