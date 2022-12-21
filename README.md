@@ -1,2 +1,2 @@
 # tasklist
-Simple tasklist (just back-end) with Node.js and PostgreSQL.
+Simple tasklist API REST with Node.js and PostgreSQL.
